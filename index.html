@@ -16,10 +16,18 @@
 
     <script type="text/jsx">
     const app = document.getElementById("app");
-          
-    function Header(props) {
-        console.log(props)
-        return <h1>ipsuml</h1>;
+
+    function createTitle(title){
+        if (title){
+            return title;
+        } else{
+            return 'Default title'
+        }
+    }
+
+    function Header({title}) {
+        return <h1>{createTitle(title)}</h1>;
+
     }
     function Home() {
         return <div>
