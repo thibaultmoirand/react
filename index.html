@@ -7,27 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        <script type="text/javascript">
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 
-            // sélection de la balise div avec l'id 'h1'
-            const app= document.getElementById('app');
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
 
-            // création d'un nouvel élément html, une balise h1
-            const header = document.createElement('h1');
-
-            //création de texte pour l'élément html h1
-            const headerContent = document.createTextNode(
-                'De l\'html crée avec JS!'
-            );
-
-            //ajout du text a l'élément html h1
-            header.append(headerContent);
-
-            //ajout de l'élément html a l'interieur de la div
-            app.appendChild(header);
-            
+    <script type="text/jsx">
+    const app = document.getElementById("app");
+          
+    function Header(props) {
+        console.log(props)
+        return <h1>ipsuml</h1>;
+    }
+    function Home() {
+        return <div>
+            <Header title="Apprendre React" />
+        </div>
+    }
+    ReactDOM.render(<Home />, app);
         </script>
-    </div>
+
 </body>
 </html>
