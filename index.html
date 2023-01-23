@@ -15,26 +15,40 @@
     
 
     <script type="text/jsx">
-    const app = document.getElementById("app");
+        const app = document.getElementById("app");
 
-    function createTitle(title){
-        if (title){
-            return title;
-        } else{
-            return 'Default title'
+
+        function Header({title}){
+            return (<h1>{title ? title : 'default'}</h1>)
+    
         }
-    }
+    
+        function Home(){
+            const names = ['John Doe', 'Foo Bar', 'Linus T.'];
+            {/* Voici un commentaire */}
 
-    function Header({title}) {
-        return <h1>{createTitle(title)}</h1>;
-
-    }
-    function Home() {
-        return <div>
-            <Header title="Apprendre React" />
-        </div>
-    }
-    ReactDOM.render(<Home />, app);
+    
+            const [counter, setCompteur] = React.useState(0);
+        function handleClick() {
+            
+                }
+    
+                return(
+                    <div>
+                        <Header title='Apprendre React'/>
+    
+                         <ul>
+                                {names.map((name)=>(
+                                <li key = {name} >{name}</li>
+                            ))}
+                        </ul>
+                
+                        <button onClick={handleClick}>compteur</button>
+                </div>
+                )
+        }
+    
+        ReactDOM.render(<Home />, app);
         </script>
 
 </body>
